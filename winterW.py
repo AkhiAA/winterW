@@ -1,7 +1,6 @@
 # Winter Wonderland by Akhi & Pauline
 from graphics import*
 
-
 WinterWin = GraphWin("Winter Wonderland",600,600)
 WinterWin.setCoords(0,0,600,600)
 WinterWin.setBackground("light blue")
