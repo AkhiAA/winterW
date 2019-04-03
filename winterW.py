@@ -1,34 +1,32 @@
 # Winter Wonderland by Akhi & Pauline
 from graphics import*
 
+def draw_circ(cX, cY, cRad, cColor, cWin):
+    circle = Circle(Point(cX,cY), cRad)
+    circle.setFill(cColor)
+    circle.setOutline(cColor)
+    circle.draw(cWin)  
+    
+
 WinterWin = GraphWin("Winter Wonderland",600,600)
 WinterWin.setCoords(0,0,600,600)
 WinterWin.setBackground("light blue")
 
 #bottom cirlce
-circle = Circle(Point(100,100), 34)
-circle.setFill("white")
-circle.setOutline("white")
-circle.draw(WinterWin)
-#middle circle 
-circle = Circle(Point(100,140), 28)
-circle.setFill("white")
-circle.setOutline("white")
-circle.draw(WinterWin)
+draw_circ(100, 100, 34, "white", WinterWin)
+
+#middle circle
+draw_circ(100, 140, 28, "white", WinterWin)
+
 #top circle
-circle = Circle(Point(100,175), 23)
-circle.setFill("white")
-circle.setOutline("white")
-circle.draw(WinterWin)
+draw_circ(100, 175, 23, "white", WinterWin)
 
 #snowman eyes
-circle = Circle(Point(90,175), 3)
-circle.setFill("black")
-circle.draw(WinterWin)
+draw_circ(90, 180, 3, "black", WinterWin)
+
 #----------------
-circle = Circle(Point(110,175), 3)
-circle.setFill("black")
-circle.draw(WinterWin)
+draw_circ(110, 180, 3, "black", WinterWin)
+
 #nose
 nose = Line(Point(100,170), Point(120,160))
 nose.setFill("orange")
