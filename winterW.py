@@ -2,25 +2,23 @@
 from graphics import*
 import random
 
-def draw_sf(sX, sY, size, color, WinterWin):
+def draw_sf(sX, sY, size, color, sfWin):
     sf = Circle(Point(sX, sY), size)
     sf.setFill(color)
     sf.setOutline(color)
     sf.draw(WinterWin)
 
-sX=550
-sY=550
-size=5
-color="white"
+def draw_sfs(flkNum, xStart, xFin, yStart, yFin, size, color,sfsWin):
+    for i in range(flkNum):
+        draw_sf(random.randint(xStart,xFin),random.randint(yStart,yFin) , size , color ,sfsWin)
+
 
 WinterWin = GraphWin("Winter Wonderland",600,600)
 WinterWin.setCoords(0,0,600,600)
 WinterWin.setBackground("light blue")
 
-for i in range(50):
-    draw_sf(random.randint(1,600),random.randint(300,600) , size, color, WinterWin)
 
-
+draw_sfs(50, 1, 600, 300, 600, 5, "white", WinterWin) 
 
 ## Snowflake
 circle = Circle(Point(550,550), 5)
