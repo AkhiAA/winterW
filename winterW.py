@@ -2,6 +2,17 @@
 from graphics import*
 import random
 
+def draw_sf(sX, sY, size, color, sfWin):
+    sf = Circle(Point(sX, sY), size)
+    sf.setFill(color)
+    sf.setOutline(color)
+    sf.draw(WinterWin)
+    
+def draw_sfs(flkNum, xStart, xFin, yStart, yFin, size, color,sfsWin):
+    for i in range(flkNum):
+        draw_sf(random.randint(xStart,xFin),random.randint(yStart,yFin) , size , color ,sfsWin)
+
+
 def draw_rect(rX, rY, rW, rH, rCol, rWin):   #draws bottom snow
     Rect = Rectangle(Point(rX,rY),Point (rX + rW, rY + rH))
     Rect.setFill(rCol)
@@ -33,6 +44,7 @@ WinterWin = GraphWin("Winter Wonderland",600,600)
 WinterWin.setCoords(0,0,600,600)
 WinterWin.setBackground("light blue")
 
+
 draw_rect(0, 0, 600, 80, "light gray", WinterWin)
 
 anchX = 100      
@@ -42,20 +54,16 @@ anchR = 58
 for i in range (4):
     draw_sm(anchX, anchY, anchR, "white",WinterWin)
 
-##-------- Snow code--------
-###bottom cirlce
-##draw_circ(anchX, anchY * .71, anchR * 1.21, "white", WinterWin)
-##
-###middle circle
-##draw_circ(anchX, anchY, anchR, "white", WinterWin)
-##
-###top circle
-##draw_circ(anchX, anchY * 1.25, anchR * .82, "white", WinterWin)
-##
-###snowman eyes
-##draw_circ(anchX - anchR / 3, 180, anchR * .11, "black", WinterWin)
-##
-###----------------
-##draw_circ(anchX + anchR / 3, 180, anchR * .11, "black", WinterWin)
-##
-###nose
+draw_sfs(370, 1, 600, 300, 600, 5, "white", WinterWin) 
+
+
+## Gray Snow
+Rect = Rectangle(Point(0,0),Point (600,80))
+
+Rect.setFill("light gray")
+Rect.draw(WinterWin)
+
+
+
+WinterWin.getMouse()
+WinterWin.close()
