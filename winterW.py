@@ -14,7 +14,7 @@ def draw_circ(cX, cY, cRad, cColor, cWin):  #draws the circle for the snowman
     circle.setOutline(cColor)
     circle.draw(cWin)
     
-def draw_sm(sX, sY, sRad,sCol,sWin):
+def draw_sm(sX, sY, sRad, sCol, sWin):
     draw_circ(sX, sY - sRad * 1.2, sRad * 1.21, "white", sWin)     #bottonm
     draw_circ(sX, sY, sRad, "white", sWin)                  #middle
     draw_circ(sX, sY + sRad * 1.2, sRad * .82, "white", sWin)     #top
@@ -22,10 +22,10 @@ def draw_sm(sX, sY, sRad,sCol,sWin):
     draw_circ(sX - sRad / 4, sY + sRad * 1.5 , sRad * .11, "black", sWin)  #left eye 
     draw_circ(sX + sRad / 4, sY + sRad * 1.5 , sRad * .11, "black", sWin)  #right eye
     
-##    nose = Polygon(Point(sX, sY+ sRad), Point(sX * 1.05, sY + sRad * 1.25), Point(sX * 1.2, sY + sRad*.71))
-##    nose.setOutline("orange")
-##    nose.setFill("orange")
-##    nose.draw(sWin)
+    nose = Polygon(Point(sX - sRad *.1, sY + sRad * 1.1), Point(sX, sY + sRad * 1.3), Point(sX + sRad *.82, sY + sRad))
+    nose.setOutline("orange")
+    nose.setFill("orange")
+    nose.draw(sWin)
 
 
 
@@ -37,7 +37,7 @@ draw_rect(0, 0, 600, 80, "light gray", WinterWin)
 
 anchX = 100      
 anchY = 140
-anchR = 28
+anchR = 58
 
 for i in range (4):
     draw_sm(anchX, anchY, anchR, "white",WinterWin)
